@@ -9,7 +9,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend access
+CORS(app, resources={r"/*": {"origins": "*"}}) # Allow frontend access
 
 MONGO_URI = os.getenv("MONGO_URI")
 DB_NAME = os.getenv("DB_NAME")
